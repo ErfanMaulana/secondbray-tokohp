@@ -68,7 +68,7 @@ class DatabaseSeeder extends Seeder
                 'price' => 8500000,
                 'stock' => 5,
                 'description' => 'iPhone 12 Pro Max 256GB. Kondisi sangat baik, mulus, fullset dengan box original.',
-                'condition' => 'Excellent',
+                'condition' => 'Sangat Baik',
             ],
             [
                 'category_id' => 2, // Mid Range
@@ -78,7 +78,7 @@ class DatabaseSeeder extends Seeder
                 'price' => 5500000,
                 'stock' => 8,
                 'description' => 'iPhone 11 128GB. Kondisi bagus, normal, no minus.',
-                'condition' => 'Good',
+                'condition' => 'Baik',
             ],
             [
                 'category_id' => 1, // Flagship
@@ -88,7 +88,7 @@ class DatabaseSeeder extends Seeder
                 'price' => 7200000,
                 'stock' => 3,
                 'description' => 'Samsung S21 Ultra 12/256GB. Kondisi mulus, garansi resmi habis.',
-                'condition' => 'Excellent',
+                'condition' => 'Sangat Baik',
             ],
             [
                 'category_id' => 2, // Mid Range
@@ -98,7 +98,7 @@ class DatabaseSeeder extends Seeder
                 'price' => 3200000,
                 'stock' => 10,
                 'description' => 'Samsung A52 8/128GB. Kondisi bagus, minus goresan halus.',
-                'condition' => 'Good',
+                'condition' => 'Baik',
             ],
             [
                 'category_id' => 3, // Gaming
@@ -108,7 +108,7 @@ class DatabaseSeeder extends Seeder
                 'price' => 4500000,
                 'stock' => 6,
                 'description' => 'Xiaomi Mi 11 8/256GB. Kondisi bagus, lengkap dengan charger.',
-                'condition' => 'Good',
+                'condition' => 'Baik',
             ],
             [
                 'category_id' => 1, // Flagship
@@ -118,7 +118,7 @@ class DatabaseSeeder extends Seeder
                 'price' => 6500000,
                 'stock' => 4,
                 'description' => 'Oppo Find X3 Pro 12/256GB. Kondisi sangat bagus, fullset.',
-                'condition' => 'Excellent',
+                'condition' => 'Sangat Baik',
             ],
             [
                 'category_id' => 2, // Mid Range
@@ -128,7 +128,7 @@ class DatabaseSeeder extends Seeder
                 'price' => 5800000,
                 'stock' => 5,
                 'description' => 'Vivo X60 Pro 12/256GB. Kondisi bagus, kamera jernih.',
-                'condition' => 'Good',
+                'condition' => 'Baik',
             ],
             [
                 'category_id' => 4, // Entry Level
@@ -138,7 +138,7 @@ class DatabaseSeeder extends Seeder
                 'price' => 3500000,
                 'stock' => 12,
                 'description' => 'Realme GT Master 8/128GB. Kondisi normal, performa tinggi.',
-                'condition' => 'Fair',
+                'condition' => 'Cukup',
             ],
         ];
 

@@ -33,7 +33,7 @@ class ProductController extends Controller
             'price' => 'required|numeric|min:0',
             'stock' => 'required|integer|min:0',
             'description' => 'nullable|string',
-            'condition' => 'required|in:Excellent,Good,Fair',
+            'condition' => 'required|in:Sangat Baik,Baik,Cukup',
             'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
@@ -68,7 +68,7 @@ class ProductController extends Controller
             'price' => 'required|numeric|min:0',
             'stock' => 'required|integer|min:0',
             'description' => 'nullable|string',
-            'condition' => 'required|in:Excellent,Good,Fair',
+            'condition' => 'required|in:Sangat Baik,Baik,Cukup',
             'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 

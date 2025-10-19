@@ -87,9 +87,10 @@
                     <div>
                         <label class="block text-sm font-medium text-gray-900 dark:text-gray-100 mb-2">Kondisi *</label>
                         <select name="condition" required class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
-                            <option value="Excellent" {{ old('condition') == 'Excellent' ? 'selected' : '' }}>Excellent</option>
-                            <option value="Good" {{ old('condition') == 'Good' ? 'selected' : '' }}>Good</option>
-                            <option value="Fair" {{ old('condition') == 'Fair' ? 'selected' : '' }}>Fair</option>
+                            <option value="">Pilih Kondisi</option>
+                            <option value="Sangat Baik" {{ old('condition') == 'Sangat Baik' ? 'selected' : '' }}>Sangat Baik</option>
+                            <option value="Baik" {{ old('condition') == 'Baik' ? 'selected' : '' }}>Baik</option>
+                            <option value="Cukup" {{ old('condition') == 'Cukup' ? 'selected' : '' }}>Cukup</option>
                         </select>
                         @error('condition')
                             <p class="text-red-600 dark:text-red-400 text-sm mt-1">{{ $message }}</p>

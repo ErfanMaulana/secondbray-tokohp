@@ -44,9 +44,9 @@
                     <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Kondisi</label>
                     <select name="condition" class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
                         <option value="">Semua Kondisi</option>
-                        <option value="Excellent" {{ request('condition') == 'Excellent' ? 'selected' : '' }}>Excellent</option>
-                        <option value="Good" {{ request('condition') == 'Good' ? 'selected' : '' }}>Good</option>
-                        <option value="Fair" {{ request('condition') == 'Fair' ? 'selected' : '' }}>Fair</option>
+                        <option value="Sangat Baik" {{ request('condition') == 'Sangat Baik' ? 'selected' : '' }}>Sangat Baik</option>
+                        <option value="Baik" {{ request('condition') == 'Baik' ? 'selected' : '' }}>Baik</option>
+                        <option value="Cukup" {{ request('condition') == 'Cukup' ? 'selected' : '' }}>Cukup</option>
                     </select>
                 </div>
 

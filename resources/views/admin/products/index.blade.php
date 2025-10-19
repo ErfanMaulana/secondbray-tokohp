@@ -145,7 +145,7 @@
                                     <div class="fixed inset-0 bg-black bg-opacity-50 transition-opacity" @click="showModal = false"></div>
                                     
                                     <!-- Modal Content -->
-                                    <div class="flex items-center justify-center min-h-screen p-4">
+                                    <div class="flex items-center justify-center min-h-screen p-4 py-8">
                                         <div x-show="showModal"
                                              x-transition:enter="transition ease-out duration-300"
                                              x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
@@ -153,80 +153,80 @@
                                              x-transition:leave="transition ease-in duration-200"
                                              x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
                                              x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                                             class="relative bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-hidden"
+                                             class="relative bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-4xl w-full my-8"
                                              @click.away="showModal = false">
                                             
                                             <!-- Modal Header -->
-                                            <div class="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
-                                                <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Detail Produk</h3>
+                                            <div class="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
+                                                <h3 class="text-xl font-bold text-gray-900 dark:text-white">Detail Produk</h3>
                                                 <button @click="showModal = false" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
-                                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                                                     </svg>
                                                 </button>
                                             </div>
 
                                             <!-- Modal Body -->
-                                            <div class="p-6 overflow-y-auto max-h-[calc(90vh-140px)]">
-                                                <div class="grid md:grid-cols-2 gap-6">
+                                            <div class="p-4">
+                                                <div class="grid md:grid-cols-2 gap-4">
                                                     <!-- Image Section -->
-                                                    <div class="space-y-4">
-                                                        <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-4 flex items-center justify-center" style="min-height: 300px;">
+                                                    <div class="space-y-3">
+                                                        <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-4 flex items-center justify-center" style="height: 280px;">
                                                             <template x-if="productData.image">
-                                                                <img :src="productData.image" :alt="productData.name" class="max-w-full max-h-80 object-contain rounded-lg">
+                                                                <img :src="productData.image" :alt="productData.name" class="max-h-full object-contain rounded-lg" style="max-width: 280px;">
                                                             </template>
                                                             <template x-if="!productData.image">
-                                                                <span class="text-8xl">📱</span>
+                                                                <span class="text-5xl">📱</span>
                                                             </template>
                                                         </div>
                                                     </div>
 
                                                     <!-- Info Section -->
-                                                    <div class="space-y-4">
+                                                    <div class="space-y-3">
                                                         <div>
-                                                            <h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-2" x-text="productData.name"></h4>
-                                                            <div class="flex flex-wrap gap-2 mb-4">
-                                                                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200" x-text="productData.brand"></span>
-                                                                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200" x-text="productData.category"></span>
-                                                                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold" :class="productData.stock <= 5 ? 'bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200' : 'bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200'" x-text="productData.stock + ' unit'"></span>
+                                                            <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-2" x-text="productData.name"></h4>
+                                                            <div class="flex flex-wrap gap-2 mb-3">
+                                                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200" x-text="productData.brand"></span>
+                                                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200" x-text="productData.category"></span>
+                                                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold" :class="productData.stock <= 5 ? 'bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200' : 'bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200'" x-text="productData.stock + ' unit'"></span>
                                                             </div>
                                                         </div>
 
                                                         <!-- Price -->
-                                                        <div class="bg-indigo-50 dark:bg-indigo-900/20 rounded-lg p-4 border border-indigo-200 dark:border-indigo-800">
-                                                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-1">Harga</p>
-                                                            <p class="text-3xl font-bold text-indigo-600 dark:text-indigo-400" x-text="productData.price"></p>
+                                                        <div class="bg-indigo-50 dark:bg-indigo-900/20 rounded-lg p-3 border border-indigo-200 dark:border-indigo-800">
+                                                            <p class="text-xs text-gray-600 dark:text-gray-400 mb-1">Harga</p>
+                                                            <p class="text-2xl font-bold text-indigo-600 dark:text-indigo-400" x-text="productData.price"></p>
                                                         </div>
 
                                                         <!-- Specifications -->
-                                                        <div class="grid grid-cols-2 gap-3">
-                                                            <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-3">
+                                                        <div class="grid grid-cols-2 gap-2">
+                                                            <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-2">
                                                                 <p class="text-xs text-gray-500 dark:text-gray-400 mb-1">Warna</p>
                                                                 <p class="text-sm font-semibold text-gray-900 dark:text-white" x-text="productData.color"></p>
                                                             </div>
-                                                            <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-3">
+                                                            <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-2">
                                                                 <p class="text-xs text-gray-500 dark:text-gray-400 mb-1">Varian</p>
                                                                 <p class="text-sm font-semibold text-gray-900 dark:text-white" x-text="productData.variant"></p>
                                                             </div>
-                                                            <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-3">
+                                                            <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-2">
                                                                 <p class="text-xs text-gray-500 dark:text-gray-400 mb-1">Kondisi</p>
                                                                 <p class="text-sm font-semibold text-gray-900 dark:text-white" x-text="productData.condition"></p>
                                                             </div>
-                                                            <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-3">
+                                                            <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-2">
                                                                 <p class="text-xs text-gray-500 dark:text-gray-400 mb-1">Stok</p>
                                                                 <p class="text-sm font-semibold text-gray-900 dark:text-white" x-text="productData.stock + ' unit'"></p>
                                                             </div>
                                                         </div>
 
                                                         <!-- Description -->
-                                                        <div class="border-t border-gray-200 dark:border-gray-700 pt-4">
-                                                            <h5 class="text-sm font-semibold text-gray-900 dark:text-white mb-2">Deskripsi</h5>
-                                                            <p class="text-sm text-gray-700 dark:text-gray-300 whitespace-pre-line" x-text="productData.description"></p>
+                                                        <div class="border-t border-gray-200 dark:border-gray-700 pt-3">
+                                                            <h5 class="text-sm font-semibold text-gray-900 dark:text-white mb-1">Deskripsi</h5>
+                                                            <p class="text-xs text-gray-700 dark:text-gray-300 line-clamp-3" x-text="productData.description"></p>
                                                         </div>
 
                                                         <!-- Meta Info -->
-                                                        <div class="border-t border-gray-200 dark:border-gray-700 pt-4">
-                                                            <div class="grid grid-cols-2 gap-3 text-xs">
+                                                        <div class="border-t border-gray-200 dark:border-gray-700 pt-3">
+                                                            <div class="grid grid-cols-2 gap-2 text-xs">
                                                                 <div>
                                                                     <p class="text-gray-500 dark:text-gray-400">Dibuat</p>
                                                                     <p class="text-gray-900 dark:text-white font-medium" x-text="productData.created"></p>
@@ -242,7 +242,7 @@
                                             </div>
 
                                             <!-- Modal Footer -->
-                                            <div class="flex items-center justify-end gap-3 p-6 border-t border-gray-200 dark:border-gray-700">
+                                            <div class="flex items-center justify-end gap-3 p-4 border-t border-gray-200 dark:border-gray-700">
                                                 <button @click="showModal = false" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 font-medium rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
                                                     Tutup
                                                 </button>

@@ -10,7 +10,10 @@ class BrandController extends Controller
 {
     public function index()
     {
-        $brands = Brand::withCount('products')->latest()->get();
+        $brands = Brand::with(['products.category'])
+            ->withCount('products')
+            ->latest()
+            ->get();
         return view('admin.brands.index', compact('brands'));
     }
 
